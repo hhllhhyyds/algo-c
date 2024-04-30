@@ -1,3 +1,6 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,3 +18,5 @@ void free_vector(struct Vector *v);
 int vector_len(struct Vector *v);
 
 struct Vector example_vector();
+
+#endif

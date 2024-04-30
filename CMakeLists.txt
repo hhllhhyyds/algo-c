@@ -5,8 +5,14 @@ project(ALGO_C LANGUAGES C)
 add_library(vector
     vector.c
 )
+target_include_directories(vector PUBLIC
+    ${CMAKE_SOURCE_DIR}
+)
 
-target_link_directories(vector PUBLIC
+add_library(assert
+    assert.c
+)
+target_include_directories(assert PUBLIC
     ${CMAKE_SOURCE_DIR}
 )
 
@@ -18,4 +24,5 @@ target_include_directories(algo_c PRIVATE
 )
 target_link_libraries(algo_c
     vector
+    assert
 )
