@@ -25,12 +25,12 @@ void vector_push(struct Vector *v, Elem p);
 
 /// @brief 获取可变长数组位于序号 index 位置的元素
 /// @param index
-Elem vector_get(size_t index);
+Elem vector_get(struct Vector *v, size_t index);
 
 /// @brief 将可变长数组位于序号 index 位置的值设置成新的元素
 /// @param index
 /// @param p
-void vector_set(size_t index, Elem p);
+void vector_set(struct Vector *v, size_t index, Elem p);
 
 struct Vector example_vector();
 
