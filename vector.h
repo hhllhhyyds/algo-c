@@ -10,6 +10,7 @@ typedef float Elem;
 struct Vector
 {
     int len;
+    int capacity;
     Elem *data;
 };
 
