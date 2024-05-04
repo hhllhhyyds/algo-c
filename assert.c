@@ -5,7 +5,7 @@ void handle_error(char *err)
     printf("Error: ");
     if (err != NULL)
     {
-        printf(err);
+        printf("%s", err);
     }
     else
     {
