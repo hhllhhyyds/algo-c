@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-void assert(bool condition, char *err);
+void my_assert(bool condition, char *err);
 bool float_eq(float a, float b);
 bool double_eq(double a, double b);
 

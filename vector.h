@@ -18,6 +18,7 @@ void print_elem(Elem *p);
 void print_vector(struct Vector *v);
 void free_vector(struct Vector *v);
 int vector_len(struct Vector *v);
+struct Vector empty_vector();
 
 /// @brief 在 Vecotr 末尾插入一个新元素，如果原有的空间不够，则分配新的空间。这样我们就支持了可变长的数组
 /// @param v 将插入的数组的指针
