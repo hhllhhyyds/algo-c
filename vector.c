@@ -24,15 +24,13 @@ void print_vector(struct Vector *v)
 
 struct Vector example_vector()
 {
-    struct Vector v;
-    int size = 20;
-    Elem *p = (Elem *)malloc(size * sizeof(Elem));
-    for (int i = 0; i < size; i++)
+    struct Vector v = empty_vector();
+
+    int p;
+    for (p = 0; p < 20; p++)
     {
-        p[i] = -i;
+        vector_push(&v, p);
     }
-    v.len = size;
-    v.data = p;
     return v;
 }
 
@@ -41,6 +39,7 @@ void free_vector(struct Vector *v)
     if (v != NULL)
     {
         v->len = 0;
+        v->capacity = 0;
         if (v->data != NULL)
         {
             free(v->data);
@@ -58,7 +57,14 @@ void vector_push(struct Vector *v, Elem p)
 {
     if (v->len >= v->capacity)
     {
-        v->capacity *= 2;
+        if (v->capacity == 0)
+        {
+            v->capacity++;
+        }
+        else
+        {
+            v->capacity *= 2;
+        }
         Elem *new_data = (Elem *)realloc(v->data, v->capacity * sizeof(Elem));
         if (new_data == NULL)
         {
@@ -95,4 +101,13 @@ void vector_set(struct Vector *v, size_t index, Elem p)
         printf("Error: Index out of range\n");
         exit(1);
     }
+}
+
+struct Vector empty_vector()
+{
+    struct Vector v;
+    v.len = 0;
+    v.capacity = 0;
+    v.data = NULL;
+    return v;
 }

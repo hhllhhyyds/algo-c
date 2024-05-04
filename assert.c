@@ -15,7 +15,7 @@ void handle_error(char *err)
     exit(-1);
 }
 
-void assert(bool condition, char *err)
+void my_assert(bool condition, char *err)
 {
     if (condition == false)
     {
