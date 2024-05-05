@@ -1,4 +1,5 @@
 #include "vector.h"
+#include "assert.h"
 
 void print_elem(Elem *p)
 {
@@ -101,6 +102,27 @@ void vector_set(struct Vector *v, size_t index, Elem p)
         printf("Error: Index out of range\n");
         exit(1);
     }
+}
+
+void vector_insert(struct Vector *v, Elem p, int index)
+{
+    my_assert(index <= v->len && index >= 0, "Index error, out of range");
+    vector_push(v, 0);
+    for (int i = v->len - 1; i > index; i--)
+    {
+        v->data[i] = v->data[i - 1];
+    }
+    v->data[index] = p;
+}
+
+void vector_delete(struct Vector *v, int index)
+{
+    my_assert(index < v->len && index >= 0, "Index error, out of range");
+    for (int i = index; i < v->len - 1; i++)
+    {
+        v->data[i] = v->data[i + 1];
+    }
+    v->len--;
 }
 
 struct Vector empty_vector()
