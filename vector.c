@@ -125,6 +125,18 @@ void vector_delete(struct Vector *v, int index)
     v->len--;
 }
 
+int vector_find(struct Vector *v, Elem target)
+{
+    for (int i = 0; i < v->len; i++)
+    {
+        if (v->data[i] == target)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
 struct Vector empty_vector()
 {
     struct Vector v;
