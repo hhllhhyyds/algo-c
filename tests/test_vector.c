@@ -44,10 +44,40 @@ void test_vector_push()
     }
 }
 
+void test_vector_insert()
+{
+    struct Vector example_v = example_vector();
+    vector_insert(&example_v, 5.5, 6);
+    float e = vector_get(&example_v, 6);
+    my_assert(float_eq(e, 5.5), "insert error");
+    free_vector(&example_v);
+    for (int i = 19; i >= 0; i--)
+    {
+        vector_insert(&example_v, i, 0);
+    }
+    for (int j = 0; j < 20; j++)
+    {
+        float d = vector_get(&example_v, j);
+        my_assert(float_eq(d, j), "insert error");
+    }
+}
+
+void test_vector_delete()
+{
+    struct Vector example_v = example_vector();
+    float h = vector_get(&example_v, 7);
+    my_assert(float_eq(h, 7), "delete error");
+    vector_delete(&example_v, 7);
+    float f = vector_get(&example_v, 7);
+    my_assert(float_eq(f, 8), "delete error");
+}
+
 int main()
 {
     test_example_vector();
     test_vector_push();
     test_vector_set();
+    test_vector_insert();
+    test_vector_delete();
     return 0;
 }

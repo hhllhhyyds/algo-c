@@ -34,6 +34,10 @@ Elem vector_get(struct Vector *v, size_t index);
 /// @param p
 void vector_set(struct Vector *v, size_t index, Elem p);
 
+void vector_insert(struct Vector *v, Elem p, int index);
+
+void vector_delete(struct Vector *v, int index);
+
 struct Vector example_vector();
 
 #endif
