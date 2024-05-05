@@ -4,6 +4,13 @@ project(ALGO_C LANGUAGES C)
 
 enable_testing()
 
+add_library(assert
+    assert.c
+)
+target_include_directories(assert PUBLIC
+    ${CMAKE_SOURCE_DIR}
+)
+
 add_library(vector
     vector.c
 )
@@ -11,10 +18,10 @@ target_include_directories(vector PUBLIC
     ${CMAKE_SOURCE_DIR}
 )
 
-add_library(assert
-    assert.c
+add_library(linked_list
+    linked_list.c
 )
-target_include_directories(assert PUBLIC
+target_include_directories(linked_list PUBLIC
     ${CMAKE_SOURCE_DIR}
 )
 

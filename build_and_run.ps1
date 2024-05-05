@@ -3,5 +3,5 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
-./Debug/algo_c.exe
+ctest -C Debug --output-on-failure
 cd ..

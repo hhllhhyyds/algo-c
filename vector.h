@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-typedef float Elem;
+#include "elem.h"
 
 struct Vector
 {
