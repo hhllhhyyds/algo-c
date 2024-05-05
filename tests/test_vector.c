@@ -72,6 +72,15 @@ void test_vector_delete()
     my_assert(float_eq(f, 8), "delete error");
 }
 
+void test_vector_find()
+{
+    struct Vector example_v = example_vector();
+    int j = vector_find(&example_v, 10.0);
+    my_assert(j == 10, "find error");
+    int k = vector_find(&example_v, 23.0);
+    my_assert(k == -1, "find error");
+}
+
 int main()
 {
     test_example_vector();
@@ -79,5 +88,6 @@ int main()
     test_vector_set();
     test_vector_insert();
     test_vector_delete();
+    test_vector_find();
     return 0;
 }

@@ -38,6 +38,8 @@ void vector_insert(struct Vector *v, Elem p, int index);
 
 void vector_delete(struct Vector *v, int index);
 
+int vector_find(struct Vector *v, Elem target);
+
 struct Vector example_vector();
 
 #endif
