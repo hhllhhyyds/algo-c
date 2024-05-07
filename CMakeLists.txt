@@ -39,3 +39,7 @@ add_test(
     NAME test_vector
     COMMAND ${CMAKE_BINARY_DIR}/test_vector
 )
+add_test(
+    NAME test_lnked_list
+    COMMAND ${CMAKE_BINARY_DIR}/test_linked_list
+)
