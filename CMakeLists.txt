@@ -39,3 +39,15 @@ add_test(
     NAME test_vector
     COMMAND ${CMAKE_BINARY_DIR}/test_vector
 )
+
+add_executable(test_linked_list
+    ${CMAKE_SOURCE_DIR}/tests/test_linked_list.c
+)
+target_link_libraries(test_linked_list
+    linked_list
+    assert
+)
+add_test(
+    NAME test_linked_list
+    COMMAND ${CMAKE_BINARY_DIR}/test_linked_list
+)
