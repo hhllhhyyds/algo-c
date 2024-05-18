@@ -2,3 +2,7 @@
 void test_vector_insert_linkedlist()
 {
 }
+
+int main()
+{
+}

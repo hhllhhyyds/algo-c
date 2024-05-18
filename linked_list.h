@@ -26,7 +26,7 @@ void list_insert(struct ListNode *n0, struct ListNode *P);
 void linkedlist_insert_head(struct LinkedList *list, struct ListNode *p);
 
 // 取值
-int get_value(struct ListNode *head, int Index);
+Elem get_value(struct ListNode *head, int Index);
 
 struct LinkedList empty_list();
 

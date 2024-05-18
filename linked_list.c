@@ -42,7 +42,7 @@ void linkedlist_insert_head(struct LinkedList *list, struct ListNode *p)
 }
 
 // 取值
-int get_value(struct ListNode *head, int Index)
+Elem get_value(struct ListNode *head, int Index)
 {
     struct ListNode *current = head;
     int count = 0;

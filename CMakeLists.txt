@@ -63,7 +63,8 @@ add_executable(test_vector_and_linkedlist
     ${CMAKE_SOURCE_DIR}/tests/test_vector_and_linkedlist.c
 )
 target_link_libraries(test_vector_and_linkedlist
-    vector_and_linkedlist
+    linked_list
+    vector
     assert
 )
 add_test(

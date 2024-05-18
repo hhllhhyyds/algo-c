@@ -23,23 +23,24 @@ void test_linkedlist_insert()
     struct LinkedList a = empty_list();
     linkedlist_insert_head(&a, node0);
     printf("%d", a.len);
-    printf("%d", a.head->val);
+    printf("%f", a.head->val);
     my_assert(a.head->val == 10, "assert error");
 }
 
 void test_get_value()
 {
-    struct ListNode *node0 = new_list_node(10);
-    struct ListNode *node1 = new_list_node(30);
+    struct ListNode *node0 = new_list_node(10.0);
+    struct ListNode *node1 = new_list_node(30.0);
     node0->next = node1;
-    int a = 1;
-    int get_value(node0, a);
-    int b = get_value();
-    my_assert(b == 10, "get error");
+    Elem a = get_value(node0, 0);
+    Elem b = get_value(node0, 1);
+    my_assert(double_eq(a, 10.0), "get error");
+    my_assert(double_eq(b, 30.0), "get error");
 }
 
 int main()
 {
     test_list_insert();
     test_linkedlist_insert();
+    test_get_value();
 }
