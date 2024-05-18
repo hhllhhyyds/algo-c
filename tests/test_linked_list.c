@@ -27,6 +27,17 @@ void test_linkedlist_insert()
     my_assert(a.head->val == 10, "assert error");
 }
 
+void test_get_value()
+{
+    struct ListNode *node0 = new_list_node(10);
+    struct ListNode *node1 = new_list_node(30);
+    node0->next = node1;
+    int a = 1;
+    int get_value(node0, a);
+    int b = get_value();
+    my_assert(b == 10, "get error");
+}
+
 int main()
 {
     test_list_insert();

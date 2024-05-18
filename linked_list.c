@@ -12,7 +12,7 @@ struct LinkedList empty_list()
 }
 
 /* 构造函数 */
-struct ListNode *new_list_node(int val)
+struct ListNode *new_list_node(Elem val)
 {
     struct ListNode *node;
     node = (struct ListNode *)malloc(sizeof(struct ListNode));
@@ -39,4 +39,21 @@ void linkedlist_insert_head(struct LinkedList *list, struct ListNode *p)
     p->next = list->head;
     list->head = p;
     list->len++;
+}
+
+// 取值
+int get_value(struct ListNode *head, int Index)
+{
+    struct ListNode *current = head;
+    int count = 0;
+    while (current != NULL)
+    {
+        if (count == Index)
+        {
+            return current->val;
+        }
+        count++;
+        current = current->next;
+    }
+    return -1;
 }
