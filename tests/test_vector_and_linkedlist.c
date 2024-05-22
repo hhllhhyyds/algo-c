@@ -3,12 +3,17 @@
 #include <stdio.h>
 void test_vector_insert_linkedlist()
 {
-    struct Vector *new_example_v = new_example_vector();
-    struct LinkedList *list = vector_insert_linkedlist();
-    int i;
-    for (i = 0; i < 100; i++)
+    struct Vector new_example_v = new_example_vector();
+    struct LinkedList new_list = new_empty_list();
+    for (int i = 0; i < 100; i++)
     {
-        Elem a =
+        float n = vector_get(&new_example_v, i);
+        struct ListNode *node = new_list_node(n);
+        linkedlist_insert_head(&new_list, node);
+    }
+
+    for (int i = 0; i < 100; i++)
+    {
     }
 }
 

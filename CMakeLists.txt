@@ -66,6 +66,7 @@ target_link_libraries(test_vector_and_linkedlist
     linked_list
     vector
     assert
+    vector_and_linkedlist
 )
 add_test(
     NAME test_vector_and_linkedlist
